@@ -5,6 +5,7 @@ import EmergencyButton from "@/components/EmergencyButton";
 import ResourceCard from "@/components/ResourceCard";
 import HelpMap from "@/components/HelpMap";
 import VoiceAssistant from "@/components/VoiceAssistant";
+import { Link } from "react-router-dom";
 import { 
   Heart, 
   Phone, 
@@ -14,7 +15,8 @@ import {
   HelpCircle,
   HandHeart,
   MapPin,
-  ArrowDownCircle
+  ArrowDownCircle,
+  GraduationCap
 } from "lucide-react";
 
 const Index = () => {
@@ -128,6 +130,27 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Поддержка</h3>
                 <p className="text-sos-gray text-large">Широкий спектр ресурсов для длительной поддержки и восстановления</p>
+              </CardContent>
+            </Card>
+          </div>
+          
+          {/* Ссылка на страницу для специалистов */}
+          <div className="mt-12 text-center">
+            <Card className="sos-shadow bg-sos-lightGray mx-auto max-w-2xl">
+              <CardContent className="p-6">
+                <div className="flex flex-col items-center space-y-4">
+                  <GraduationCap className="h-12 w-12 text-sos-green" />
+                  <h3 className="text-2xl font-semibold text-sos-darkGray">Вы специалист в сфере помощи жертвам насилия?</h3>
+                  <p className="text-sos-gray text-large">
+                    Посетите наш центр ресурсов для специалистов, где вы найдете профессиональные материалы, 
+                    сможете присоединиться к сообществу и получить доступ к специализированным инструментам.
+                  </p>
+                  <Link to="/specialists">
+                    <Button className="bg-sos-green hover:bg-sos-darkGreen text-white text-large">
+                      <GraduationCap className="mr-2 h-5 w-5" /> Перейти в центр для специалистов
+                    </Button>
+                  </Link>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -339,6 +362,11 @@ const Index = () => {
       <footer className="bg-sos-darkGray text-white py-8">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center">
+            <div className="mb-4 flex justify-center items-center">
+              <Link to="/" className="mx-2 hover:text-sos-green transition-colors">Главная</Link>
+              <span className="mx-2">|</span>
+              <Link to="/specialists" className="mx-2 hover:text-sos-green transition-colors">Для специалистов</Link>
+            </div>
             <p className="text-large mb-4">
               SOS Жертвам Насилия © 2025. Все права защищены.
             </p>
